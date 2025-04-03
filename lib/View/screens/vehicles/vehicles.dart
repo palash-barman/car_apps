@@ -68,6 +68,9 @@ class _VehiclesState extends State<Vehicles> {
                       data['model'],
                       data['vin'],
                       selectIndex == index,
+                      () {
+                        // todo: Implement delete feature
+                      },
                     ),
                   );
                 },
@@ -89,7 +92,13 @@ class _VehiclesState extends State<Vehicles> {
     );
   }
 
-  _buildCard(String image, title, subTitle, bool isBorder) {
+  _buildCard(
+    String image,
+    title,
+    subTitle,
+    bool isBorder,
+    VoidCallback onDelete,
+  ) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white.withAlpha((0.05 * 255).toInt()),
@@ -113,6 +122,10 @@ class _VehiclesState extends State<Vehicles> {
               subtitle: Text(
                 subTitle,
                 style: TextStyle(color: Color(0xffCDCDCD), fontSize: 12),
+              ),
+              trailing: InkWell(
+                onTap: onDelete,
+                child: Icon(Icons.delete, color: Get.theme.primaryColor),
               ),
             ),
           ),

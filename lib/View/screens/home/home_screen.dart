@@ -56,6 +56,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             Spacer(),
+            Text(
+              "Honda Civic 2018",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            SizedBox(height: 20.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w),
               child: Wrap(

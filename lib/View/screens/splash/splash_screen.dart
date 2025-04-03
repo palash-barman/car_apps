@@ -24,7 +24,7 @@ class SplashScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "Unleash the next evolution in car home",
+                  "Unleash the next evolution in vehicle home",
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 40,
@@ -34,11 +34,12 @@ class SplashScreen extends StatelessWidget {
 
                 SizedBox(height: 64),
 
-                CustomButton(label: "GET STARTED", onTap: () {
-
-                  Get.to(()=>SignInScreen());
-
-                }),
+                CustomButton(
+                  label: "GET STARTED",
+                  onTap: () {
+                    Get.to(() => SignInScreen());
+                  },
+                ),
                 SizedBox(height: 64),
               ],
             ),
@@ -48,4 +49,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
-
