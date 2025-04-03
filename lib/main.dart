@@ -44,26 +44,26 @@ class MyApp extends StatelessWidget {
 
 
 
-    return ScreenUtilInit(
-      child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        themeMode: ThemeMode.dark,
-        theme: ThemeData(
-          primarySwatch: Colors.red,
-          appBarTheme: AppBarTheme(
-            backgroundColor: Color(0xff141414),
-            titleTextStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 20),
-            iconTheme: IconThemeData(
-              color: Colors.white
-            )
-          ),
-          primaryColor: Color(0xffE65D00),
-          scaffoldBackgroundColor: Color(0xff141414),
-          textTheme: GoogleFonts.robotoTextTheme(),
+    // return ScreenUtilInit(
+    //   child: GetMaterialApp(
+    //     debugShowCheckedModeBanner: false,
+    //     themeMode: ThemeMode.dark,
+    //     theme: ThemeData(
+    //       primarySwatch: Colors.red,
+    //       appBarTheme: AppBarTheme(
+    //         backgroundColor: Color(0xff141414),
+    //         titleTextStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.w700,fontSize: 20),
+    //         iconTheme: IconThemeData(
+    //           color: Colors.white
+    //         )
+    //       ),
+    //       primaryColor: Color(0xffE65D00),
+    //       scaffoldBackgroundColor: Color(0xff141414),
+    //       textTheme: GoogleFonts.robotoTextTheme(),
       
-        ),
-        home:  SplashScreen(),
-      ),
-    );
+    //     ),
+    //     home:  SplashScreen(),
+    //   ),
+    // );
   }
 }

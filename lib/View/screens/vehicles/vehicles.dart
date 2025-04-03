@@ -41,7 +41,7 @@ class _VehiclesState extends State<Vehicles> {
         "vin": "Toyota Rav 4 2022",
       },
     ];
-    var selectIndex=(-1);
+    var selectIndex = (-1);
 
     return Scaffold(
       appBar: AppBar(
@@ -57,13 +57,18 @@ class _VehiclesState extends State<Vehicles> {
                 itemBuilder: (context, index) {
                   var data = modelList[index];
                   return InkWell(
-                    onTap: (){
+                    onTap: () {
                       setState(() {
                         selectIndex = index;
                       });
-                      Get.to(()=>HomeScreen());
+                      Get.to(() => HomeScreen());
                     },
-                    child: _buildCard(data['image']!, data['model'], data['vin'],selectIndex==index),
+                    child: _buildCard(
+                      data['image']!,
+                      data['model'],
+                      data['vin'],
+                      selectIndex == index,
+                    ),
                   );
                 },
                 separatorBuilder: (BuildContext context, int index) {
@@ -71,10 +76,12 @@ class _VehiclesState extends State<Vehicles> {
                 },
               ),
             ),
-            CustomButton(label: "ADD NEW VEHICLE", onTap: () {
-
-              Get.to(()=>AddVehicles());
-            }),
+            CustomButton(
+              label: "ADD NEW VEHICLE",
+              onTap: () {
+                Get.to(() => AddVehicles());
+              },
+            ),
             SizedBox(height: 34),
           ],
         ),
@@ -82,12 +89,12 @@ class _VehiclesState extends State<Vehicles> {
     );
   }
 
-  _buildCard(String image, title, subTitle,bool isBorder) {
+  _buildCard(String image, title, subTitle, bool isBorder) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withAlpha((0.05 * 255).toInt()),
         borderRadius: BorderRadius.circular(12),
-        border:isBorder? Border.all(color: Get.theme.primaryColor):null
+        border: isBorder ? Border.all(color: Get.theme.primaryColor) : null,
       ),
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 5),
       child: Row(

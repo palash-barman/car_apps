@@ -51,20 +51,27 @@ class NotificationScreen extends StatelessWidget {
   _buildCard(String image, title, subTitle) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.05),
+        color: Colors.white.withAlpha((0.05 * 255).toInt()),
         borderRadius: BorderRadius.circular(12),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 12,),
+      padding: EdgeInsets.symmetric(horizontal: 12),
       child: Row(
         children: [
           Container(
             height: 48,
             width: 48,
-            decoration: BoxDecoration(shape: BoxShape.circle,color: Get.theme.primaryColor),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Get.theme.primaryColor,
+            ),
             alignment: Alignment.center,
-            child: SvgPicture.asset(image, height: 24, width: 24, fit: BoxFit.fill),
+            child: SvgPicture.asset(
+              image,
+              height: 24,
+              width: 24,
+              fit: BoxFit.fill,
+            ),
           ),
-
 
           Expanded(
             child: ListTile(

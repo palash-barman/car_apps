@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -35,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 0,
                     margin: EdgeInsets.only(top: 200.h),
                     decoration: BoxDecoration(
-                      color: Colors.blue.withOpacity(0.1),
+                      color: Colors.blue.withAlpha((0.1 * 255).toInt()),
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
@@ -57,9 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-           Spacer(),
+            Spacer(),
             Padding(
-              padding:EdgeInsets.symmetric(horizontal: 10.w),
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
               child: Wrap(
                 spacing: 16.w,
                 runSpacing: 16.w,
@@ -71,8 +69,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     backgroundColor:
                         engineOn
                             ? Get.theme.primaryColor
-                            : Get.theme.primaryColor.withOpacity(0.08),
-                    toggleColor: engineOn ? Colors.white : Get.theme.primaryColor,
+                            : Get.theme.primaryColor.withAlpha(
+                              (0.08 * 255).toInt(),
+                            ),
+                    toggleColor:
+                        engineOn ? Colors.white : Get.theme.primaryColor,
                     onChanged: (val) => setState(() => engineOn = val),
                   ),
                   DeviceToggleCard(
@@ -82,9 +83,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     backgroundColor:
                         doorOpen
                             ? Get.theme.primaryColor
-                            : Get.theme.primaryColor.withOpacity(0.08),
+                            : Get.theme.primaryColor.withAlpha(
+                              (0.08 * 255).toInt(),
+                            ),
                     onChanged: (val) => setState(() => doorOpen = val),
-                    toggleColor: doorOpen ? Colors.white : Get.theme.primaryColor,
+                    toggleColor:
+                        doorOpen ? Colors.white : Get.theme.primaryColor,
                   ),
                   DeviceToggleCard(
                     title: 'GPS Tracking',
@@ -93,7 +97,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     backgroundColor:
                         gpsOn
                             ? Get.theme.primaryColor
-                            : const Color(0xFFE65D00).withOpacity(0.08),
+                            : const Color(
+                              0xFFE65D00,
+                            ).withAlpha((0.08 * 255).toInt()),
                     toggleColor: gpsOn ? Colors.white : Get.theme.primaryColor,
                     onChanged: (val) => setState(() => gpsOn = val),
                   ),
@@ -104,7 +110,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     backgroundColor:
                         acOn
                             ? Get.theme.primaryColor
-                            : const Color(0xFFE65D00).withOpacity(0.08),
+                            : const Color(
+                              0xFFE65D00,
+                            ).withAlpha((0.08 * 255).toInt()),
                     toggleColor: acOn ? Colors.white : Get.theme.primaryColor,
                     onChanged: (val) => setState(() => acOn = val),
                   ),
@@ -112,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-            SizedBox(height: 40.h,)
+            SizedBox(height: 40.h),
           ],
         ),
       ),
@@ -152,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white.withOpacity(0.10),
+              color: Colors.white.withAlpha((0.1 * 255).toInt()),
             ),
             child: SvgPicture.asset(
               "assets/images/notification_icon.svg",
@@ -169,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
           alignment: Alignment.center,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.white.withOpacity(0.10),
+            color: Colors.white.withAlpha((0.1 * 255).toInt()),
           ),
           child: Image.asset("assets/images/img_1.png", fit: BoxFit.cover),
         ),
@@ -206,15 +214,15 @@ class DeviceToggleCard extends StatelessWidget {
       height: 72.sp,
       padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
       decoration: BoxDecoration(
-       color:backgroundColor,
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(12.r),
         boxShadow: [
-          BoxShadow(color:Colors.white.withOpacity(0.05),
+          BoxShadow(
+            color: Colors.white.withAlpha((0.05 * 255).toInt()),
             blurRadius: 1,
             spreadRadius: 0,
-            
-          )
-        ]
+          ),
+        ],
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -243,7 +251,7 @@ class DeviceToggleCard extends StatelessWidget {
             child: Container(
               width: 28.h,
               height: 56.h,
-              padding:  EdgeInsets.all(4.r),
+              padding: EdgeInsets.all(4.r),
               decoration: BoxDecoration(
                 border: Border.all(color: toggleColor, width: 2),
                 borderRadius: BorderRadius.circular(32),

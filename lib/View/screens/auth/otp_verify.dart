@@ -53,7 +53,7 @@ class VerificationScreen extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                   decoration: BoxDecoration(
-                    color: Color(0xffffffff).withOpacity(0.03),
+                    color: Color(0xffffffff).withAlpha((0.03 * 255).toInt()),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
