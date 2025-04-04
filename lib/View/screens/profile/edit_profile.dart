@@ -70,11 +70,14 @@ class _EditProfileState extends State<EditProfile> {
                         ),
                         child:
                             imageFile != null
-                                ? Image.file(
-                                  imageFile!,
-                                  fit: BoxFit.cover,
-                                  width: 115.w,
-                                  height: 115.h,
+                                ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(100),
+                                  child: Image.file(
+                                    imageFile!,
+                                    fit: BoxFit.cover,
+                                    width: 115.w,
+                                    height: 115.h,
+                                  ),
                                 )
                                 : Image.asset(
                                   'assets/images/img_1.png',
