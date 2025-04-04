@@ -1,3 +1,4 @@
+import 'package:car_apps/View/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -181,15 +182,18 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         SizedBox(width: 12.w),
 
-        Container(
-          height: 48.w,
-          width: 48.w,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white.withAlpha((0.1 * 255).toInt()),
+        GestureDetector(
+          onTap: () => Get.to(() => ProfileScreen()),
+          child: Container(
+            height: 48.w,
+            width: 48.w,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.white.withAlpha((0.1 * 255).toInt()),
+            ),
+            child: Image.asset("assets/images/img_1.png", fit: BoxFit.cover),
           ),
-          child: Image.asset("assets/images/img_1.png", fit: BoxFit.cover),
         ),
         SizedBox(width: 20.w),
       ],
